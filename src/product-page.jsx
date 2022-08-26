@@ -2,10 +2,11 @@ import React from "react";
 import Title from "./title";
 import Article from "./article";
 import Gallery from "./gallery";
-import OldPrice from "./old-price";
-import Price from "./price";
+import FullPrice from "./full-price";
 import Count from "./count";
 import Description from "./description";
+import Comments from "./comments";
+import Popularity from "./popularity";
 
 function ProductPage({ product }) {
   return (
@@ -17,8 +18,7 @@ function ProductPage({ product }) {
         <div>
           <p>
             Цена:
-            <OldPrice value={product.oldPrice} />{" "}
-            <Price value={product.price} />
+            <FullPrice oldPrice={product.oldPrice} price={product.price} />
           </p>
           <div>
             Количество:
@@ -28,9 +28,11 @@ function ProductPage({ product }) {
             <span>Доставка:</span> {product.delivery}
           </p>
           <button type="button">Купить</button>
+          <Popularity count={product.comments.length} />
         </div>
       </div>
       <Description>{product.description}</Description>
+      <Comments comments={product.comments} />
     </section>
   );
 }
