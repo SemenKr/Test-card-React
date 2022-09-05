@@ -1,12 +1,12 @@
 import React from "react";
-import Title from "./title";
-import Article from "./article";
-import Gallery from "./gallery";
-import FullPrice from "./full-price";
-import Count from "./count";
-import Description from "./description";
-import Comments from "./comments";
-import Popularity from "./popularity";
+import Title from "/src/title/title";
+import Article from "/src/article/article";
+import Gallery from "/src/gallery/gallery";
+import FullPrice from "/src/full-price/full-price";
+import Count from "/src/count/count";
+import Description from "/src/description/description";
+import Comments from "/src/comments/comments";
+import Popularity from "/src/popularity/popularity";
 
 function ProductPage({ product }) {
   return (
