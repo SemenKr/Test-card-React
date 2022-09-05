@@ -7,6 +7,7 @@ import Count from "/src/count/count";
 import Description from "/src/description/description";
 import Comments from "/src/comments/comments";
 import Popularity from "/src/popularity/popularity";
+import Button from "/src/button/button";
 
 function ProductPage({ product }) {
   return (
@@ -17,7 +18,7 @@ function ProductPage({ product }) {
         <Gallery src={product.src} alt={product.alt} />
         <div>
           <p>
-            Цена:
+            Цена:{" "}
             <FullPrice oldPrice={product.oldPrice} price={product.price} />
           </p>
           <div>
@@ -27,11 +28,11 @@ function ProductPage({ product }) {
           <p>
             <span>Доставка:</span> {product.delivery}
           </p>
-          <button type="button">Купить</button>
+          <Button size="large">Купить</Button>
           <Popularity count={product.comments.length} />
         </div>
       </div>
-      <Description>{product.description}</Description>
+      <Description text={product.description} />
       <Comments comments={product.comments} />
     </section>
   );

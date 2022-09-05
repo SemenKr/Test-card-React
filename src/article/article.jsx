@@ -1,7 +1,8 @@
 import React from "react";
+import { StyledArticle } from "./styled";
 
 function Article({ children }) {
-  return <small>Артикул: {children}</small>;
+  return <StyledArticle>Артикул: {children}</StyledArticle>;
 }
 
 export default Article;
