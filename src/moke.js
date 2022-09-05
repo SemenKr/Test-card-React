@@ -1,7 +1,7 @@
 export const product = {
   name: "3D принтер",
   article: 2840367,
-  price: 33333,
+  price: 3333,
   oldPrice: 55555,
   delivery: "1 апреля",
   src: "https://i.ibb.co/gPCq1G4/image.png",
