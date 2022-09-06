@@ -5,6 +5,7 @@ import Description from "/src/description/description";
 import Comments from "/src/comments/comments";
 import Popularity from "/src/popularity/popularity";
 import { Image } from "/src/elements";
+import Tabs from "/src/tabs/tabs";
 import {
   StyledProductPage,
   Header,
@@ -18,6 +19,17 @@ import {
 } from "./styled";
 
 function ProductPage({ product }) {
+  const tabs = [
+    {
+      title: "Описание",
+      content: <Description text={product.description} />
+    },
+    {
+      title: "Комментарии",
+      content: <Comments comments={product.comments} />
+    }
+  ];
+
   return (
     <StyledProductPage>
       <Header>
@@ -48,8 +60,7 @@ function ProductPage({ product }) {
           <Popularity count={product.comments.length} />
         </ProductInfo>
       </ProductWrapper>
-      <Description text={product.description} />
-      <Comments comments={product.comments} />
+      <Tabs tabs={tabs} tabIndex={1} />
     </StyledProductPage>
   );
 }
