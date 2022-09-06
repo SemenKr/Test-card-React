@@ -27,7 +27,7 @@ export const TitleText = styled(Title)`
 
 export const Content = styled.div`
   border: 1px solid #ddd;
-  padding: ${(props) => props.theme.indent};
+  padding: 10px 20px;
   line-height: 1.5;
   font-size: 16px;
   box-sizing: border-box;
