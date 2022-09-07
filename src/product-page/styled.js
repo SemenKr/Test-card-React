@@ -3,6 +3,7 @@ import { P } from "/src/elements";
 import Button from "/src/button/button";
 import Count from "/src/count/count";
 import FullPrice from "/src/full-price/full-price";
+import { theme } from "../theme/theme";
 
 const valueStyle = `
 display: inline-flex;
@@ -29,7 +30,7 @@ export const ProductWrapper = styled.section`
 `;
 
 export const ProductInfo = styled.div`
-  margin-left: 20px;
+  margin-left: ${(props) => props.theme.indent};
   border-left: 1px solid #888;
   box-sizing: border-box;
   padding-left: 20px;
