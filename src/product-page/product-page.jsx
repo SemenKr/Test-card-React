@@ -50,7 +50,7 @@ function ProductPage({ product }) {
             <PageFullPrice oldPrice={product.oldPrice} price={product.price} />
           </ProductInfoLine>
           <ProductInfoLine>
-            Количество: Количество: <PageCounter />
+            Количество: <PageCounter />
           </ProductInfoLine>
           <ProductInfoLine>
             <span>Доставка:</span>{" "}

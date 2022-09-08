@@ -1,8 +1,10 @@
-import React from "react";
-import { StyledArticle } from "./styled";
+import styled from "styled-components";
 
-function Article({ children }) {
-  return <StyledArticle>Артикул: {children}</StyledArticle>;
-}
+export const Article = styled.span.attrs((props) => ({
+  children: `Артикул: ${props.children}`
+}))`
+  color: ${(props) => props.theme.textColorMuted};
+  font-size: 12px;
+`;
 
 export default Article;
