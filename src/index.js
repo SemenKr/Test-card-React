@@ -2,10 +2,7 @@ import ReactDOM from "react-dom";
 import { product } from "./moke";
 import ProductPage from "/src/product-page/product-page";
 import { ThemeProvider } from "styled-components";
-
-const theme = {
-  indent: "20px"
-};
+import { theme } from "./theme/defaultTheme";
 
 const rootElement = document.querySelector("#root");
 ReactDOM.render(

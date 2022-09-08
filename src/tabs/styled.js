@@ -22,12 +22,13 @@ export const TitleButton = styled.button`
 `;
 
 export const TitleText = styled(Title)`
-  color: ${(props) => (props.active ? "#333 " : "#888")};
+  color: ${(props) =>
+    props.active ? props.theme.textColor : props.theme.textColorMuted};
 `;
 
 export const Content = styled.div`
   border: 1px solid #ddd;
-  padding: 10px 20px;
+  padding: ${(props) => props.theme.indent};
   line-height: 1.5;
   font-size: 16px;
   box-sizing: border-box;

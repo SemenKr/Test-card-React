@@ -1,7 +1,7 @@
 import React from "react";
 import { TitleList, TitleButton, TitleText, Content } from "./styled";
 
-function Tabs({ tabs, activeTab = 0 }) {
+function Tabs({ tabs, activeTab = 1 }) {
   return (
     <div>
       <TitleList>
