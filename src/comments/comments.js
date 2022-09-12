@@ -13,7 +13,9 @@ function Comments({ comments }) {
           </CoomentsLi>
         ))}
       </Ul>
-      <CoomentsButton>Показать ещё</CoomentsButton>
+      <CoomentsButton onClick={() => console.log("показать ещё 3 комментария")}>
+        Показать ещё
+      </CoomentsButton>
     </>
   );
 }
