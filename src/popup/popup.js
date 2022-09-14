@@ -22,6 +22,7 @@ export default function PopUp({ isShow, onClose, title, children }) {
           x
         </Close>
       </Header>
+      {children}
     </Wrapper>
   ) : null;
 }
