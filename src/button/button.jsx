@@ -21,7 +21,6 @@ const Button = styled(ElementButton)`
       border-radius: ${theme.radius};
     `;
   }}
-
   &:active,
 &:hover {
     background-color: ${(propos) => propos.theme.buttonHover};
@@ -29,6 +28,14 @@ const Button = styled(ElementButton)`
 
   &:active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  &:disabled {
+    color: ${(props) => props.theme.buttonColor};
+    &:hover {
+      background-color: ${(props) => props.theme.buttonColor};
+      cursor: auto;
+    }
   }
 `;
 

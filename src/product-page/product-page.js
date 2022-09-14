@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Title from "/src/title/title";
 import Article from "/src/article/article";
 import Description from "/src/description/description";
@@ -19,6 +19,8 @@ import {
 } from "./styled";
 
 function ProductPage({ product }) {
+  const [productCount, setProductCount] = useState(1);
+
   const tabs = [
     {
       title: "Описание",
@@ -47,10 +49,18 @@ function ProductPage({ product }) {
         <ProductInfo>
           <ProductInfoLine>
             Цена:{" "}
-            <PageFullPrice oldPrice={product.oldPrice} price={product.price} />
+            <PageFullPrice
+              oldPrice={product.oldPrice * productCount}
+              price={product.price * productCount}
+            />
           </ProductInfoLine>
           <ProductInfoLine>
-            Количество: <PageCounter />
+            Количество:{" "}
+            <PageCounter
+              onChange={setProductCount}
+              value={productCount}
+              minValue={1}
+            />
           </ProductInfoLine>
           <ProductInfoLine>
             <span>Доставка:</span>{" "}
