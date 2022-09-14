@@ -6,6 +6,7 @@ import Comments from "/src/comments/comments";
 import Popularity from "/src/popularity/popularity";
 import { Image } from "/src/elements";
 import Tabs from "/src/tabs/tabs";
+import PopUp from "/src/popup/popup";
 import {
   StyledProductPage,
   Header,
@@ -20,6 +21,7 @@ import {
 
 function ProductPage({ product }) {
   const [productCount, setProductCount] = useState(1);
+  const [isShowPopup, setIsShowPopup] = useState(false);
 
   const tabs = [
     {
@@ -66,16 +68,20 @@ function ProductPage({ product }) {
             <span>Доставка:</span>{" "}
             <DeliveryValue>{product.delivery}</DeliveryValue>
           </ProductInfoLine>
-          <BuyButton
-            size="large"
-            onClick={() => console.log("открытие окна оформления заказа")}
-          >
+          <BuyButton size="large" onClick={() => setIsShowPopup(true)}>
             Купить
           </BuyButton>
           <Popularity count={product.comments.length} />
         </ProductInfo>
       </ProductWrapper>
       <Tabs tabs={tabs} tabIndex={1} />
+      <PopUp
+        isShow={isShowPopup}
+        onClose={() => setIsShowPopup(false)}
+        title="Оформление"
+      >
+        это рыба
+      </PopUp>
     </StyledProductPage>
   );
 }
