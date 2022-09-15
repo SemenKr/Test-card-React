@@ -7,6 +7,7 @@ import Popularity from "/src/popularity/popularity";
 import { Image } from "/src/elements";
 import Tabs from "/src/tabs/tabs";
 import PopUp from "/src/popup/popup";
+import Order from "/src/order/order";
 import {
   StyledProductPage,
   Header,
@@ -78,9 +79,9 @@ function ProductPage({ product }) {
       <PopUp
         isShow={isShowPopup}
         onClose={() => setIsShowPopup(false)}
-        title="Оформление"
+        title="Заказ"
       >
-        это рыба
+        <Order />
       </PopUp>
     </StyledProductPage>
   );
