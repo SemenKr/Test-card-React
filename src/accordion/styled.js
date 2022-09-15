@@ -14,6 +14,9 @@ export const TitleButton = styled.button`
   display: block;
   background-color: #ccc;
   font-size: 18px;
+  box-sizing: border-box;
+  cursor: ${(props) => (props.isActive ? "auto" : "pointer")};
+  border-bottom: 1px solid black;
 `;
 
 export const TitleText = styled(Title)`
@@ -35,7 +38,7 @@ export const Content = styled.div`
 
 export const ContentWrapper = styled.div`
   position: relative;
-  height: 200px;
+  height: 0px;
   overflow: hidden;
   width: 100%;
   transition: 0.3s;
