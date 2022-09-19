@@ -2,7 +2,7 @@ import React from "react";
 import { Ul } from "/src/elements";
 import { CoomentsLi, CoomentsButton, Name, Text } from "./styled";
 
-function Comments({ comments }) {
+function Comments({ comments, onShowMore, allCommentsLength }) {
   return (
     <>
       <Ul>
@@ -13,9 +13,9 @@ function Comments({ comments }) {
           </CoomentsLi>
         ))}
       </Ul>
-      <CoomentsButton onClick={() => console.log("показать ещё 3 комментария")}>
-        Показать ещё
-      </CoomentsButton>
+      {allCommentsLength > comments.length && (
+        <CoomentsButton onClick={onShowMore}>Показать ещё</CoomentsButton>
+      )}
     </>
   );
 }
