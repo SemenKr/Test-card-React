@@ -1,12 +1,13 @@
-import ReactDOM from "react-dom/client";
-import { product } from "./moke";
+import ReactDOM from "react-dom";
+
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme/defaultTheme";
-import ProductPage from "./product-page/product-page";
+import App from "./app/app";
 
-const rootElement = ReactDOM.createRoot(document.getElementById("root"));
-rootElement.render(
+const rootElement = document.getElementById("root");
+ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <ProductPage product={product} showInfoInAccordion />
-  </ThemeProvider>
+    <App />
+  </ThemeProvider>,
+  rootElement
 );
