@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Title from "/src/title/title";
-import Article from "/src/article/article";
+import Code from "/src/code/code";
 import Description from "/src/description/description";
 import Comments from "/src/comments/comments";
 import Popularity from "/src/popularity/popularity";
@@ -9,6 +9,7 @@ import Tabs from "/src/tabs/tabs";
 import PopUp from "/src/popup/popup";
 import Order from "/src/order/order";
 import Accordion from "/src/accordion/accordion";
+
 import {
   StyledProductPage,
   Header,
@@ -26,9 +27,11 @@ const COMMENTS_COUNT = 3;
 
 function ProductPage({ product, showInfoInAccordion }) {
   const [productCount, setProductCount] = useState(1);
-  const [isShowPopup, setIsShowPopup] = useState(false);
   const [isShowAllDescription, setIsShowAllDescription] = useState(false);
   const [commentsShow, setCommentsShow] = useState(COMMENTS_COUNT);
+  const [isShowPopup, setIsShowPopup] = useState(false);
+  const price = product.price * productCount;
+  const oldPrice = product.oldPrice * productCount;
 
   const tabs = [
     {
@@ -61,24 +64,20 @@ function ProductPage({ product, showInfoInAccordion }) {
     <StyledProductPage>
       <Header>
         <Title>{product.name}</Title>
-        <Article>{product.article}</Article>
+        <Code>{product.code}</Code>
       </Header>
       <ProductWrapper>
         <Slider images={product.images} />
         <ProductInfo>
           <ProductInfoLine>
-            Цена:{" "}
-            <PageFullPrice
-              oldPrice={product.oldPrice * productCount}
-              price={product.price * productCount}
-            />
+            Цена: <PageFullPrice oldPrice={oldPrice} price={price} />
           </ProductInfoLine>
           <ProductInfoLine>
             Количество:{" "}
             <PageCounter
-              onChange={setProductCount}
               value={productCount}
               minValue={1}
+              onChange={setProductCount}
             />
           </ProductInfoLine>
           <ProductInfoLine>
@@ -92,11 +91,10 @@ function ProductPage({ product, showInfoInAccordion }) {
         </ProductInfo>
       </ProductWrapper>
       {showInfoInAccordion ? <Accordion items={tabs} /> : <Tabs tabs={tabs} />}
-
       <PopUp
         isShow={isShowPopup}
         onClose={() => setIsShowPopup(false)}
-        title="Заказ"
+        title="Оформление"
       >
         <Order />
       </PopUp>
